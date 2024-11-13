@@ -159,7 +159,7 @@ public class TV {
     private TV isChannelValid(int channel) {
         this.isTurnedOn();
 
-        if (!this.channels.contains(channel)) {
+        if (!channels.contains(channel)) {
             throw new IllegalStateException(String.format("The channel [%d] is out of bounds.", channel));
         }
 
@@ -175,7 +175,7 @@ public class TV {
     private TV isVolumeLevelValid(int volumeLevel) {
         this.isTurnedOn();
 
-        if (!this.volumeLevels.contains(volumeLevel)) {
+        if (!volumeLevels.contains(volumeLevel)) {
             throw new IllegalStateException(String.format("The volume level [%d] is out of bounds.", volumeLevel));
         }
 
