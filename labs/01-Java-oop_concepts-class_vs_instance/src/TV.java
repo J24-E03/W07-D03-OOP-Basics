@@ -31,12 +31,9 @@ public class TV {
      * Scrolls the channel up.
      */
     public void channelUp() {
-        if (this.channel < 1) {
-            throw new IllegalStateException("The channel cannot be less than 1.");
-        }
-
         this
             .isTurnedOn()
+            .isChannelValid(this.channel)
             .channel++
         ;
     }
@@ -46,6 +43,7 @@ public class TV {
      */
     public void channelDown() {
         this
+            .isTurnedOn()
             .isChannelValid(this.channel)
             .channel--
         ;
