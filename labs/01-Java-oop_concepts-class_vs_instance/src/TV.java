@@ -7,6 +7,9 @@ public class TV {
         IntStream.rangeClosed(1, 100).boxed().toList()
     );
     private int volumeLevel = 1;
+    private final ArrayList<Integer> volumeLevels = new ArrayList<>(
+        IntStream.rangeClosed(1, 10).boxed().toList()
+    );
     private boolean turnedOn = false;
 
     /**
@@ -64,13 +67,13 @@ public class TV {
 
     /**
      * Sets the volume to the desired volume level.
-     * @param newVolumeLevel the new volume level.
+     * @param volumeLevel the new volume level.
      * @return the TV object.
      */
-    public TV setVolume(int newVolumeLevel) {
+    public TV setVolume(int volumeLevel) {
         this
             .isTurnedOn()
-            .volumeLevel = newVolumeLevel
+            .volumeLevel = volumeLevel
         ;
 
         return this;
@@ -78,22 +81,32 @@ public class TV {
 
     /**
      * Increases the volume.
+     * @param volumeLevel the volume level to increase.
+     * @return the TV object.
      */
-    public void volumeUp() {
+    public TV volumeUp(int volumeLevel) {
         this
             .isTurnedOn()
+            .isVolumeLevelValid(volumeLevel)
             .volumeLevel++
         ;
+
+        return this;
     }
 
     /**
      * Decreases the volume.
+     * @param volumeLevel the volume level to decrease.
+     * @return the TV object.
      */
-    public void volumeDown() {
+    public TV volumeDown(int volumeLevel) {
         this
             .isTurnedOn()
+            .isVolumeLevelValid(volumeLevel)
             .volumeLevel--
         ;
+
+        return this;
     }
 
     /**
@@ -152,6 +165,22 @@ public class TV {
 
         if (!this.channels.contains(channel)) {
             throw new IllegalStateException(String.format("The channel [%d] is out of bounds.", channel));
+        }
+
+        return this;
+    }
+
+    /**
+     * Checks if the volume level is valid.
+     * @param volumeLevel the volume level to check.
+     * @return the TV object.
+     * @throws IllegalStateException if the volume level is out of bounds.
+     */
+    private TV isVolumeLevelValid(int volumeLevel) {
+        this.isTurnedOn();
+
+        if (!this.volumeLevels.contains(volumeLevel)) {
+            throw new IllegalStateException(String.format("The volume level [%d] is out of bounds.", volumeLevel));
         }
 
         return this;
