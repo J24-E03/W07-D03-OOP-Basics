@@ -35,7 +35,7 @@ public class TV {
      */
     public void channelUp() {
         this
-            .isChannelValid(this.channel)
+            .isChannelValid(this.channel + 1)
             .channel++
         ;
     }
@@ -45,7 +45,7 @@ public class TV {
      */
     public void channelDown() {
         this
-            .isChannelValid(this.channel)
+            .isChannelValid(this.channel - 1)
             .channel--
         ;
     }
@@ -79,12 +79,11 @@ public class TV {
 
     /**
      * Increases the volume.
-     * @param volumeLevel the volume level to increase.
      * @return the TV object.
      */
-    public TV volumeUp(int volumeLevel) {
+    public TV volumeUp() {
         this
-            .isVolumeLevelValid(volumeLevel)
+            .isVolumeLevelValid(this.volumeLevel + 1)
             .volumeLevel++
         ;
 
@@ -93,12 +92,11 @@ public class TV {
 
     /**
      * Decreases the volume.
-     * @param volumeLevel the volume level to decrease.
      * @return the TV object.
      */
-    public TV volumeDown(int volumeLevel) {
+    public TV volumeDown() {
         this
-            .isVolumeLevelValid(volumeLevel)
+            .isVolumeLevelValid(this.volumeLevel - 1)
             .volumeLevel--
         ;
 
