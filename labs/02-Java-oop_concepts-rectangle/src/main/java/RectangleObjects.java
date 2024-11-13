@@ -1,8 +1,10 @@
-import java.awt.Rectangle;
+//import java.awt.Rectangle;
 
 public class RectangleObjects {
   public static void main(String[] args) {
     // TODO code here...
+    printRectangleProperties(new Rectangle(9, 12));
+    printRectangleProperties(new Rectangle(17, 13));
   }
 
   private static void printRectangleProperties(Rectangle rectangle) {
