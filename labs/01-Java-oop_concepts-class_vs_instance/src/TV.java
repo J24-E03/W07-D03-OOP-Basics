@@ -35,7 +35,6 @@ public class TV {
      */
     public void channelUp() {
         this
-            .isTurnedOn()
             .isChannelValid(this.channel)
             .channel++
         ;
@@ -46,7 +45,6 @@ public class TV {
      */
     public void channelDown() {
         this
-            .isTurnedOn()
             .isChannelValid(this.channel)
             .channel--
         ;
@@ -58,7 +56,6 @@ public class TV {
      */
     public TV setChannel(int newChannel) {
         this
-            .isTurnedOn()
             .isChannelValid(newChannel)
             .channel = newChannel
         ;
@@ -73,7 +70,6 @@ public class TV {
      */
     public TV setVolume(int volumeLevel) {
         this
-            .isTurnedOn()
             .isVolumeLevelValid(volumeLevel)
             .volumeLevel = volumeLevel
         ;
@@ -88,7 +84,6 @@ public class TV {
      */
     public TV volumeUp(int volumeLevel) {
         this
-            .isTurnedOn()
             .isVolumeLevelValid(volumeLevel)
             .volumeLevel++
         ;
@@ -103,7 +98,6 @@ public class TV {
      */
     public TV volumeDown(int volumeLevel) {
         this
-            .isTurnedOn()
             .isVolumeLevelValid(volumeLevel)
             .volumeLevel--
         ;
