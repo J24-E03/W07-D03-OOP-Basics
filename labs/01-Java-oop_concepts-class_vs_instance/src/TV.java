@@ -74,6 +74,7 @@ public class TV {
     public TV setVolume(int volumeLevel) {
         this
             .isTurnedOn()
+            .isVolumeLevelValid(volumeLevel)
             .volumeLevel = volumeLevel
         ;
 
