@@ -3,11 +3,11 @@ import java.util.stream.IntStream;
 
 public class TV {
     private int channel = 1;
-    private final ArrayList<Integer> channels = new ArrayList<>(
+    private static final ArrayList<Integer> channels = new ArrayList<>(
         IntStream.rangeClosed(1, 100).boxed().toList()
     );
     private int volumeLevel = 1;
-    private final ArrayList<Integer> volumeLevels = new ArrayList<>(
+    private static final ArrayList<Integer> volumeLevels = new ArrayList<>(
         IntStream.rangeClosed(1, 10).boxed().toList()
     );
     private boolean turnedOn = false;
@@ -58,6 +58,7 @@ public class TV {
      */
     public TV setChannel(int newChannel) {
         this
+            .isTurnedOn()
             .isChannelValid(newChannel)
             .channel = newChannel
         ;
