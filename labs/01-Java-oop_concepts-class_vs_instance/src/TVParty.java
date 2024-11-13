@@ -8,20 +8,24 @@ public class TVParty {
      * @param args args
      */
     public static void main(String[] args) {
-        //TODO instantiate the TV object
-        TV tv = null;
 
-        //TODO Your first code goes here
+        TV tv = new TV();
+        tv.turnOn();
+        tv.setChannel(3);
+        tv.setVolume(7);
+
+        TV tv2 = new TV();
+        tv2.turnOn();
+        tv2.setChannel(95);
+        tv2.setVolume(5);
+
+        System.out.println("tv1's channel is " + tv.channel + " and volume level is " + tv.volumeLevel);
 
         System.out.println("Let's watch the Alien Movie. The TV is currently [" + tv.isOn() + "] and it should be [on]." +
                 " It's being shown on channel [3], and we're currently on channel [" + tv.channel + "]. " +
                 "Your friend Lisa also would like to have the volume set to [7], and we're currently on volume [" + tv.volumeLevel + "].");
 
-        //TODO food break! turn the tv off.
-
         System.out.println("Food break! The TV should be [off], and it's currently [" + tv.isOn() + "].");
-
-        //TODO your second code goes here
 
         System.out.println("Now let's watch the last season of Game of Thrones. The TV is currently [" + tv.isOn() +
                 "] and it should be [on]. " +
