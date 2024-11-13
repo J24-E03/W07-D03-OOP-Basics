@@ -14,6 +14,7 @@ public class TV {
 
     /**
      * Turns the TV on.
+     * @return the TV object.
      */
     public TV turnOn() {
         this.turnedOn = true;
@@ -23,6 +24,7 @@ public class TV {
 
     /**
      * Turns the TV off.
+     * @return the TV object.
      */
     public TV turnOff() {
         this.turnedOn = false;
@@ -32,27 +34,40 @@ public class TV {
 
     /**
      * Scrolls the channel up.
+     * @param times the number of times to scroll up.
+     * @return the TV object.
      */
-    public void channelUp() {
-        this
-            .isChannelValid(this.channel + 1)
-            .channel++
-        ;
+    public TV channelUp(int times) {
+        for (int i = 0; i < times; i++) {
+            this
+                .isChannelValid(this.channel + 1)
+                .channel++
+            ;
+        }
+
+        return this;
     }
 
     /**
      * Scrolls the channel down.
+     * @param times the number of times to scroll down.
+     * @return the TV object.
      */
-    public void channelDown() {
-        this
-            .isChannelValid(this.channel - 1)
-            .channel--
-        ;
+    public TV channelDown(int times) {
+        for (int i = 0; i < times; i++) {
+            this
+                .isChannelValid(this.channel - 1)
+                .channel--
+            ;
+        }
+
+        return this;
     }
 
     /**
      * Sets the channel to the desired channel.
      * @param newChannel the new channel.
+     * @return the TV object.
      */
     public TV setChannel(int newChannel) {
         this
@@ -79,26 +94,32 @@ public class TV {
 
     /**
      * Increases the volume.
+     * @param times the number of times to increase the volume.
      * @return the TV object.
      */
-    public TV volumeUp() {
-        this
-            .isVolumeLevelValid(this.volumeLevel + 1)
-            .volumeLevel++
-        ;
+    public TV volumeUp(int times) {
+        for (int i = 0; i < times; i++) {
+            this
+                .isVolumeLevelValid(this.volumeLevel + 1)
+                .volumeLevel++
+            ;
+        }
 
         return this;
     }
 
     /**
      * Decreases the volume.
+     * @param times the number of times to decrease the volume.
      * @return the TV object.
      */
-    public TV volumeDown() {
-        this
-            .isVolumeLevelValid(this.volumeLevel - 1)
-            .volumeLevel--
-        ;
+    public TV volumeDown(int times) {
+        for (int i = 0; i < times; i++) {
+            this
+                .isVolumeLevelValid(this.volumeLevel - 1)
+                .volumeLevel--
+            ;
+        }
 
         return this;
     }
