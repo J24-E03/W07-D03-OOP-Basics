@@ -1,10 +1,14 @@
-import java.awt.Rectangle;
-
 public class RectangleObjects {
   public static void main(String[] args) {
-    // TODO code here...
+      printRectangleProperties(new Rectangle(9, 12));
+      printRectangleProperties(new Rectangle(17, 13));
   }
 
+  /**
+   * Prints the properties of the given rectangle.
+   *
+   * @param rectangle the rectangle to print its properties
+   */
   private static void printRectangleProperties(Rectangle rectangle) {
     System.out.println(
         Colors.ANSI_PURPLE + "Printing properties of Rectangle:" + Colors.ANSI_RESET);
