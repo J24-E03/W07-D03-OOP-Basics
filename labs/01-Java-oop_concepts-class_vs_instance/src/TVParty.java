@@ -12,7 +12,7 @@ public class TVParty {
         tv
             .turnOn()
             .setChannel(3)
-            .setVolume(7)
+            .volumeUp(6)
         ;
         System.out.println("Let's watch the Alien Movie. The TV is currently [" + tv.isOnAsString() + "] and it should be [on].");
         System.out.println("It's being shown on channel [3], and we're currently on channel [" + tv.getChannel() + "].");
@@ -24,7 +24,7 @@ public class TVParty {
         tv
             .turnOn()
             .setChannel(95)
-            .setVolume(5)
+            .volumeDown(2)
         ;
         System.out.println("Now let's watch the last season of Game of Thrones. The TV is currently [" + tv.isOnAsString() + "] and it should be [on].");
         System.out.println("It's being shown on channel [95], and we're currently on channel [" + tv.getChannel() + "].");
