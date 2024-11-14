@@ -12,12 +12,20 @@ public class TVParty {
         TV tv = new TV();
         tv.turnOn();
         tv.setChannel(3);
-        tv.setVolume(7);
+        tv.volumeDown();
+        tv.volumeDown();
+        tv.volumeDown();
+        tv.volumeDown();
+        tv.volumeDown();
+        tv.volumeDown();
+        tv.turnOff();
 
         TV tv2 = new TV();
         tv2.turnOn();
         tv2.setChannel(95);
-        tv2.setVolume(5);
+        tv2.volumeDown();
+        tv2.volumeDown();
+        tv2.turnOff();
 
         System.out.println("tv1's channel is " + tv.channel + " and volume level is " + tv.volumeLevel);
 

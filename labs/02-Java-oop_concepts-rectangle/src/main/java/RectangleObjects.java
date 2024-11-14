@@ -1,6 +1,3 @@
-import java.awt.Rectangle;
-import java.awt.geom.Rectangle2D;
-
 public class RectangleObjects {
 
     public static void main(String[] args) {
@@ -12,11 +9,14 @@ public class RectangleObjects {
       printRectangleProperties(rectangle1);
       printRectangleProperties(rectangle2);
       // Print the area of the rectangle to the console
-      System.out.println("The area of the rectangle is " + Rectangle.getArea());
+      System.out.println("The area of the rectangle is " + rectangle1.getArea());
+      System.out.println("The area of the rectangle is " + rectangle2.getArea());
       // Print the perimeter of the rectangle to the console
-      System.out.println("The perimeter of the rectangle is " + Rectangle.getPerimeter());
+      System.out.println("The perimeter of the rectangle is " + rectangle1.getPerimeter());
+      System.out.println("The perimeter of the rectangle is " + rectangle2.getPerimeter());
       // Print the diagonal of the rectangle to the console
-      System.out.println("The perimeter of the rectangle is " + Rectangle.getDagonal());
+      System.out.println("The perimeter of the rectangle is " + rectangle1.getDiagonal());
+      System.out.println("The perimeter of the rectangle is " + rectangle2.getDiagonal());
 
 
 
@@ -24,17 +24,8 @@ public class RectangleObjects {
 
   private static void printRectangleProperties(Rectangle rectangle) {
     System.out.println(Colors.ANSI_PURPLE + "Printing properties of Rectangle:" + Colors.ANSI_RESET);
-    System.out.println(Colors.ANSI_PURPLE + "Printing properties of Rectangle:" + Colors.ANSI_RESET);
 
     // width
-    System.out.println(Colors.ANSI_CYAN
-            + "Width"
-            + Colors.ANSI_RESET
-            + ": "
-            + Colors.ANSI_YELLOW
-            + rectangle.getWidth()
-            + Colors.ANSI_RESET);
-
     System.out.println(Colors.ANSI_CYAN
             + "Width"
             + Colors.ANSI_RESET
@@ -52,23 +43,7 @@ public class RectangleObjects {
             + rectangle.getHeight()
             + Colors.ANSI_RESET);
 
-    System.out.println(Colors.ANSI_CYAN
-            + "Height"
-            + Colors.ANSI_RESET
-            + ": "
-            + Colors.ANSI_YELLOW
-            + rectangle.getHeight()
-            + Colors.ANSI_RESET);
-
     // area
-    System.out.println(Colors.ANSI_CYAN
-            + "Area"
-            + Colors.ANSI_RESET
-            + ": "
-            + Colors.ANSI_YELLOW
-            + rectangle.getArea()
-            + Colors.ANSI_RESET);
-
     System.out.println(Colors.ANSI_CYAN
             + "Area"
             + Colors.ANSI_RESET
@@ -85,22 +60,8 @@ public class RectangleObjects {
             + Colors.ANSI_YELLOW
             + rectangle.getPerimeter()
             + Colors.ANSI_RESET);
-    System.out.println(Colors.ANSI_CYAN
-            + "Perimeter"
-            + Colors.ANSI_RESET
-            + ": "
-            + Colors.ANSI_YELLOW
-            + rectangle.getPerimeter()
-            + Colors.ANSI_RESET);
 
     // diagonal
-    System.out.println(Colors.ANSI_CYAN
-            + "Diagonal"
-            + Colors.ANSI_RESET
-            + ": "
-            + Colors.ANSI_YELLOW
-            + rectangle.getDiagonal()
-            + Colors.ANSI_RESET);
     System.out.println(Colors.ANSI_CYAN
             + "Diagonal"
             + Colors.ANSI_RESET

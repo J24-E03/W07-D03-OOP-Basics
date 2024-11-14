@@ -7,6 +7,9 @@ public class TV {
      * The constructor. Called when you instantiate a TV.
      */
     public TV() {
+        this.channel = 1;
+        this.volumeLevel = 1;
+        this.turnedOn = false;
     }
 
     /**
@@ -47,7 +50,7 @@ public class TV {
      * @param newChannel the new channel.
      */
     public void setChannel(int newChannel) {
-        if (turnedOn && newChannel >= 1 && newChannel <= 120) {
+        if (turnedOn && newChannel >= 1 && newChannel <= 100) {
             channel = newChannel;
         }
     }

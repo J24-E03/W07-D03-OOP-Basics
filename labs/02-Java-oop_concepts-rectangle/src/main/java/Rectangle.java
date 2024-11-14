@@ -4,7 +4,7 @@ public class Rectangle {
 
 
     // Constructor
-    public Rectangle(double width, double height) {
+    Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
 
@@ -21,14 +21,15 @@ public class Rectangle {
 
     // Methods
     public double getArea() {
-        return width * height;
+        return width*height;
     }
 
     public double getPerimeter() {
-        return 2 * (width + height);
+        return 2*width + 2*height;
     }
 
     public double getDiagonal() {
-        return Double.parseDouble(String.format("%.2f", Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2))));
+        return Math.sqrt(width*width + height*height);
+
     }
 }
