@@ -38,12 +38,10 @@ public class TV {
      * @return the TV object.
      */
     public TV channelUp(int times) {
-        for (int i = 0; i < times; i++) {
-            this
-                .isChannelValid(this.channel + 1)
-                .channel++
-            ;
-        }
+        IntStream.range(0, times).forEach(i -> this
+            .isChannelValid(this.channel + 1)
+            .channel++
+        );
 
         return this;
     }
@@ -54,12 +52,10 @@ public class TV {
      * @return the TV object.
      */
     public TV channelDown(int times) {
-        for (int i = 0; i < times; i++) {
-            this
-                .isChannelValid(this.channel - 1)
-                .channel--
-            ;
-        }
+        IntStream.range(0, times).forEach(i -> this
+            .isChannelValid(this.channel - 1)
+            .channel--
+        );
 
         return this;
     }
@@ -98,12 +94,10 @@ public class TV {
      * @return the TV object.
      */
     public TV volumeUp(int times) {
-        for (int i = 0; i < times; i++) {
-            this
-                .isVolumeLevelValid(this.volumeLevel + 1)
-                .volumeLevel++
-            ;
-        }
+        IntStream.range(0, times).forEach(i -> this
+            .isVolumeLevelValid(this.volumeLevel + 1)
+            .volumeLevel++
+        );
 
         return this;
     }
@@ -114,12 +108,10 @@ public class TV {
      * @return the TV object.
      */
     public TV volumeDown(int times) {
-        for (int i = 0; i < times; i++) {
-            this
-                .isVolumeLevelValid(this.volumeLevel - 1)
-                .volumeLevel--
-            ;
-        }
+        IntStream.range(0, times).forEach(i -> this
+            .isVolumeLevelValid(this.volumeLevel - 1)
+            .volumeLevel--
+        );
 
         return this;
     }
@@ -162,11 +154,12 @@ public class TV {
      * @throws IllegalStateException if the TV is off.
      */
     private TV isTurnedOn() {
-        if (!this.turnedOn) {
-            throw new IllegalStateException("The TV is off. Turn it on first.");
+        if (this.turnedOn) {
+            return this;
+
         }
 
-        return this;
+        throw new IllegalStateException("The TV is off. Turn it on first.");
     }
 
     /**
@@ -178,11 +171,11 @@ public class TV {
     private TV isChannelValid(int channel) {
         this.isTurnedOn();
 
-        if (!channels.contains(channel)) {
-            throw new IllegalStateException(String.format("The channel [%d] is out of bounds.", channel));
+        if (channels.contains(channel)) {
+            return this;
         }
 
-        return this;
+        throw new IllegalStateException(String.format("The channel [%d] is out of bounds.", channel));
     }
 
     /**
@@ -194,10 +187,10 @@ public class TV {
     private TV isVolumeLevelValid(int volumeLevel) {
         this.isTurnedOn();
 
-        if (!volumeLevels.contains(volumeLevel)) {
-            throw new IllegalStateException(String.format("The volume level [%d] is out of bounds.", volumeLevel));
+        if (volumeLevels.contains(volumeLevel)) {
+            return this;
         }
 
-        return this;
+        throw new IllegalStateException(String.format("The volume level [%d] is out of bounds.", volumeLevel));
     }
 }
